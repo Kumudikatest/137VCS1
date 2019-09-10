@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "137VCS1/lambda.js",
-        "code": "exports.handler = function (event, context, callback) {\n    //ktest\n    //hirudinee 1234\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
+        "code": "let AWS = require('aws-sdk');\nconst ddb = new AWS.DynamoDB.DocumentClient();\n\nexports.handler = function (event, context, callback) {\n    //ktest\n    //hirudinee 1234\n\n    ddb.get({\n        TableName: 'BTMenu',\n        Key: { 'itemCode': 'hh' }\n    }).promise()\n        .then((data) => {\n            //your logic goes here\n        })\n        .catch((err) => {\n            //handle error\n        });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -38,7 +38,42 @@
       "cd641034-956b-4a5b-bf84-cf2e0c4a1513"
     ],
     "currentFileId": "cd641034-956b-4a5b-bf84-cf2e0c4a1513",
-    "resources": {},
+    "resources": {
+      "ddbBTMenu": {
+        "name": "ddbBTMenu",
+        "type": "DynamoDB",
+        "config": {
+          "mode": 1,
+          "operation": "get",
+          "table": {
+            "arn": "arn:aws:dynamodb:us-east-1:318300609668:table/BTMenu",
+            "name": "BTMenu",
+            "partitionKey": "itemCode",
+            "partitionKeyType": "S",
+            "hasSortKey": false,
+            "sortKey": "",
+            "sortKeyType": "S",
+            "payPerRequest": true,
+            "mode": 1,
+            "streamArn": "arn:aws:dynamodb:us-east-1:318300609668:table/BTMenu/stream/2019-08-22T10:29:15.010"
+          },
+          "isGlobalEditMode": false,
+          "parameters": {
+            "Key": {
+              "itemCode": "hh"
+            },
+            "Item": {},
+            "ExpressionAttributeValues": {}
+          },
+          "triggerParams": {},
+          "validator": {
+            "validatableFields": {},
+            "validity": true
+          },
+          "valid": true
+        }
+      }
+    },
     "customTemplate": {
       "dialect": null,
       "definitions": null
@@ -54,7 +89,15 @@
       }
     ],
     "packageJSON": {
-      "dependencies": {}
+      "dependencies": {
+        "aws-sdk": {
+          "name": "aws-sdk",
+          "language": "javascript",
+          "version": "2.176.0",
+          "dev": true,
+          "notRemovable": false
+        }
+      }
     }
   },
   "PROJECT_META": {
@@ -64,7 +107,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1568109855978
+    "lastSave": 1568110152052
   },
   "VCS_STATE": {
     "provider": "GitHub",

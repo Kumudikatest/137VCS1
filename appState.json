@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "137VCS1/lambda.js",
-        "code": "exports.handler = function (event, context, callback) {\n\n    callback(null, { \"message\": \"Successfully executed hiru\" });\n}",
+        "code": "exports.handler = function (event, context, callback) {\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -30,7 +30,12 @@
           "memory": 128,
           "layers": []
         },
-        "triggers": [],
+        "triggers": [
+          {
+            "resourceName": "apigusEast1TestAPIany",
+            "config": {}
+          }
+        ],
         "testCases": {
           "4a2228bd-79ab-4e29-9622-8418c36f383a": {
             "id": "4a2228bd-79ab-4e29-9622-8418c36f383a",
@@ -64,19 +69,10 @@
     ],
     "packageJSON": {
       "dependencies": {
-        "aws-sdk": {
-          "name": "aws-sdk",
-          "language": "javascript",
-          "version": "2.176.0",
-          "dev": true,
-          "notRemovable": false
-        },
         "mysql": {
           "name": "mysql",
-          "language": "javascript",
           "version": "2.17.1",
-          "dev": false,
-          "notRemovable": false
+          "language": "javascript"
         }
       }
     }
@@ -88,7 +84,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1568114318787
+    "lastSave": 1568114797939
   },
   "VCS_STATE": {
     "provider": "GitHub",

@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "137VCS1/lambda.js",
-        "code": "exports.handler = function (event, context, callback) {\n  \n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
+        "code": "let AWS = require('aws-sdk');\nconst ddb = new AWS.DynamoDB.DocumentClient();\n\nexports.handler = function (event, context, callback) {\n    //ktest\n    //hirudinee 1234\n\n    ddb.get({\n        TableName: 'BTMenu',\n        Key: {\n            'itemCode': 'hh tets'\n        }\n    }).promise()\n        .then((data) => {\n            //your logic goes here\n        })\n        .catch((err) => {\n            //handle error\n        });\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -96,11 +96,10 @@
           },
           "isGlobalEditMode": false,
           "parameters": {
+            "TableName": "BTMenu",
             "Key": {
-              "itemCode": "hh"
-            },
-            "Item": {},
-            "ExpressionAttributeValues": {}
+              "itemCode": "hh tets"
+            }
           },
           "triggerParams": {},
           "validator": {
@@ -144,7 +143,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1568110704925
+    "lastSave": 1568111316913
   },
   "VCS_STATE": {
     "provider": "GitHub",

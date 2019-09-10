@@ -7,7 +7,9 @@ exports.handler = function (event, context, callback) {
 
     ddb.get({
         TableName: 'BTMenu',
-        Key: { 'itemCode': 'hh' }
+        Key: {
+            'itemCode': 'hh tets'
+        }
     }).promise()
         .then((data) => {
             //your logic goes here

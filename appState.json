@@ -22,7 +22,7 @@
         "children": [],
         "isRemovable": true,
         "filePath": "137VCS1/lambda.js",
-        "code": "exports.handler = function (event, context, callback) {\n\n    callback(null, { \"message\": \"Successfully executed\" });\n}",
+        "code": "exports.handler = function (event, context, callback) {\n\n    callback(null, { \"message\": \"Successfully executed hiru\" });\n}",
         "config": {
           "runtime": "nodejs8.10",
           "handler": "handler",
@@ -30,12 +30,16 @@
           "memory": 128,
           "layers": []
         },
-        "triggers": [
-          {
-            "resourceName": "apigusEast1TestAPIany",
-            "config": {}
+        "triggers": [],
+        "testCases": {
+          "4a2228bd-79ab-4e29-9622-8418c36f383a": {
+            "id": "4a2228bd-79ab-4e29-9622-8418c36f383a",
+            "name": "Test event",
+            "functionId": "cd641034-956b-4a5b-bf84-cf2e0c4a1513",
+            "event": "{\r\n    \"key1\": \"value1\",\r\n    \"key2\": \"value2\",\r\n    \"key3\": \"value3\"\r\n}",
+            "eventTemplate": "hello-world"
           }
-        ]
+        }
       }
     },
     "rootNode": "dfdd27ad-6e68-482c-919a-aebb3fb38719",
@@ -43,40 +47,7 @@
       "cd641034-956b-4a5b-bf84-cf2e0c4a1513"
     ],
     "currentFileId": "cd641034-956b-4a5b-bf84-cf2e0c4a1513",
-    "resources": {
-      "apigusEast1TestAPIany": {
-        "name": "apigusEast1TestAPIany",
-        "type": "API_GATEWAY",
-        "config": {
-          "selectedRegion": "us-east-1",
-          "apiMode": 1,
-          "apiName": "TestAPI",
-          "apiId": "0itznun7w3",
-          "endpointType": "EDGE",
-          "rootResourceId": "h2lelj6j7k",
-          "existingResources": {
-            "/MyLambda": "98nqbj",
-            "/": "h2lelj6j7k",
-            "/newchange/test": "k6pdhn",
-            "/newchange": "q1ox7l",
-            "/testWithSlash": "q4m4g1",
-            "/testtwospeciallambda": "q4szm3",
-            "/testtwospecialkumutest": "wey3lk"
-          },
-          "resourceMode": 1,
-          "resourcePath": "/",
-          "resourceName": "",
-          "resourceId": "h2lelj6j7k",
-          "restMethod": "ANY",
-          "proxyIntegration": false,
-          "enableCORS": false,
-          "stageMode": 1,
-          "stageName": "Test",
-          "stageDeploymentId": "opdupo",
-          "mode": 1
-        }
-      }
-    },
+    "resources": {},
     "customTemplate": {
       "dialect": null,
       "definitions": null
@@ -93,10 +64,19 @@
     ],
     "packageJSON": {
       "dependencies": {
+        "aws-sdk": {
+          "name": "aws-sdk",
+          "language": "javascript",
+          "version": "2.176.0",
+          "dev": true,
+          "notRemovable": false
+        },
         "mysql": {
           "name": "mysql",
+          "language": "javascript",
           "version": "2.17.1",
-          "language": "javascript"
+          "dev": false,
+          "notRemovable": false
         }
       }
     }
@@ -108,7 +88,7 @@
     "projectRegion": "us-east-1",
     "platform": "AWS",
     "platformRegions": {},
-    "lastSave": 1568114164651
+    "lastSave": 1568114318787
   },
   "VCS_STATE": {
     "provider": "GitHub",

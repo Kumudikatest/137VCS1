@@ -1,0 +1,76 @@
+{
+  "EDITOR_STATE": {
+    "allProjectFiles": {
+      "dfdd27ad-6e68-482c-919a-aebb3fb38719": {
+        "id": "dfdd27ad-6e68-482c-919a-aebb3fb38719",
+        "parent": null,
+        "name": "137VCS1",
+        "type": "DIRECTORY",
+        "isDirectory": true,
+        "children": [
+          "cd641034-956b-4a5b-bf84-cf2e0c4a1513"
+        ],
+        "isRemovable": false,
+        "filePath": "137VCS1"
+      },
+      "cd641034-956b-4a5b-bf84-cf2e0c4a1513": {
+        "id": "cd641034-956b-4a5b-bf84-cf2e0c4a1513",
+        "parent": "dfdd27ad-6e68-482c-919a-aebb3fb38719",
+        "name": "lambda.js",
+        "type": "JS_LAMBDA",
+        "isDirectory": false,
+        "children": [],
+        "isRemovable": true,
+        "filePath": "137VCS1/lambda.js",
+        "code": "exports.handler = function(event, context, callback) {\n    \n    callback(null, {\"message\": \"Successfully executed\"});\n}",
+        "config": {
+          "runtime": "nodejs8.10",
+          "handler": "handler",
+          "timeout": 60,
+          "memory": 128,
+          "layers": []
+        },
+        "triggers": []
+      }
+    },
+    "rootNode": "dfdd27ad-6e68-482c-919a-aebb3fb38719",
+    "openFiles": [
+      "cd641034-956b-4a5b-bf84-cf2e0c4a1513"
+    ],
+    "currentFileId": "cd641034-956b-4a5b-bf84-cf2e0c4a1513",
+    "resources": {},
+    "customTemplate": {
+      "dialect": null,
+      "definitions": null
+    },
+    "envVariables": [
+      {
+        "lambdaId": "all",
+        "varKey": "SIGMA_AWS_ACC_ID",
+        "varValue": null,
+        "shouldPersist": false,
+        "displayOnly": false,
+        "editable": false
+      }
+    ],
+    "packageJSON": {
+      "dependencies": {}
+    }
+  },
+  "PROJECT_META": {
+    "projectName": "137VCS1",
+    "projectDescription": "",
+    "projectVersion": "1.0.0",
+    "projectRegion": "us-east-1",
+    "platform": "AWS",
+    "platformRegions": {},
+    "lastSave": 1568108858870
+  },
+  "VCS_STATE": {
+    "provider": "GitHub",
+    "repo": {
+      "name": "137VCS1",
+      "url": "https://github.com/Kumudikatest/137VCS1"
+    }
+  }
+}
